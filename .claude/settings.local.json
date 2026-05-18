@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd /Users/akshajpiri/Documents/VSCODE/AsitPiriWebsite/asit.txt)",
+      "Bash(gh api *)",
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install *)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Users/akshajpiri/.nvm/versions/**)",
+      "Bash(brew --version)",
+      "Bash(brew install *)",
+      "Bash(/opt/homebrew/bin/node -v)",
+      "Bash(/opt/homebrew/bin/npm -v)",
+      "Bash(/opt/homebrew/bin/npm install *)",
+      "Bash(/opt/homebrew/bin/npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(kill %1)"
+    ]
+  }
+}
