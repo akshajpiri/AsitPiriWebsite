@@ -30,8 +30,8 @@ const experiences = [
     period: 'Feb 2026 – Mar 2026',
     location: 'Markham, Ontario, Canada',
     type: null,
-    dotColor: 'bg-violet-400',
-    gradient: 'from-violet-500 to-purple-500',
+    dotColor: 'bg-sky-400',
+    gradient: 'from-sky-500 to-blue-400',
     typeBadge: null,
     achievements: [
       'Led end-to-end architecture of an MCP-based enterprise tool orchestration framework enabling modular and scalable AI capability deployment.',
@@ -66,8 +66,8 @@ const experiences = [
     period: 'Jul 2023 – Dec 2025',
     location: 'Bengaluru, India',
     type: null,
-    dotColor: 'bg-purple-400',
-    gradient: 'from-purple-500 to-pink-500',
+    dotColor: 'bg-blue-300',
+    gradient: 'from-blue-500 to-cyan-400',
     typeBadge: null,
     achievements: [
       'Built and scaled the enterprise AI function from inception — grew a 10-member global engineering team across Europe and India.',

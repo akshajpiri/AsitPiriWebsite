@@ -15,10 +15,10 @@ const skillCategories = [
   },
   {
     title: 'LLMOps & Governance',
-    gradient: 'from-violet-500 to-purple-500',
-    border: 'border-violet-500/25',
-    bg: 'bg-violet-500/10',
-    textColor: 'text-violet-300',
+    gradient: 'from-blue-700 to-sky-400',
+    border: 'border-blue-700/25',
+    bg: 'bg-blue-700/10',
+    textColor: 'text-sky-300',
     skills: [
       'Model Evaluation & Benchmarking', 'Prompt Engineering', 'Fine-tuning',
       'RAG Pipelines', 'Responsible AI', 'AI Lifecycle Management', 'MCP Frameworks',
@@ -59,10 +59,10 @@ const skillCategories = [
   },
   {
     title: 'Frontend / Full-Stack',
-    gradient: 'from-pink-500 to-rose-500',
-    border: 'border-pink-500/25',
-    bg: 'bg-pink-500/10',
-    textColor: 'text-pink-300',
+    gradient: 'from-blue-500 to-sky-300',
+    border: 'border-blue-500/25',
+    bg: 'bg-blue-500/10',
+    textColor: 'text-blue-300',
     skills: ['React.js', 'Next.js', 'Streamlit', 'Docker', 'REST / GraphQL'],
   },
   {
@@ -92,7 +92,7 @@ const skillCategories = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 relative overflow-hidden">
-      <div className="orb w-[350px] h-[350px] bg-cyan-700/10 top-1/2 -left-20 -translate-y-1/2" />
+      <div className="orb w-[350px] h-[350px] bg-blue-700/10 top-1/2 -left-20 -translate-y-1/2" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

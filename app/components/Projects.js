@@ -18,7 +18,7 @@ const projects = [
       'Multi-agent orchestration system for autonomous sales and marketing automation using Agent-to-Agent (A2A) communication protocols with shared contextual memory.',
     language: 'Python',
     tags: ['A2A', 'Multi-Agent', 'Sales AI', 'Automation'],
-    gradient: 'from-violet-500 to-purple-500',
+    gradient: 'from-blue-700 to-blue-500',
     github: 'https://github.com/asit-piri/Sales-Marketing-A2A-Orchestrator',
   },
   {
@@ -54,7 +54,7 @@ const projects = [
       'Comprehensive rule templates for the Cursor IDE enabling consistent AI-assisted development with enforced best practices, project-specific conventions, and coding standards.',
     language: 'Markdown',
     tags: ['Cursor IDE', 'Dev Tools', 'AI Coding', 'Templates'],
-    gradient: 'from-pink-500 to-rose-500',
+    gradient: 'from-sky-500 to-blue-400',
     github: 'https://github.com/asit-piri/Cursor-Rule-Template',
   },
 ]
@@ -68,7 +68,7 @@ const langColors = {
 export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-slate-900/30 relative overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-violet-700/10 top-0 right-0" />
+      <div className="orb w-[400px] h-[400px] bg-blue-700/10 top-0 right-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

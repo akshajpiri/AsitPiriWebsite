@@ -28,7 +28,7 @@ const highlights = [
     icon: Globe,
     title: 'Global Reach',
     text: 'Built high-performance AI engineering organizations across India, Europe, and North America.',
-    color: 'text-violet-400',
+    color: 'text-sky-400',
   },
   {
     icon: Lightbulb,
@@ -56,7 +56,7 @@ const achievements = [
 export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-violet-700/10 top-0 right-0" />
+      <div className="orb w-[400px] h-[400px] bg-blue-700/12 top-0 right-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.04 }}
-                  className="skill-tag px-3.5 py-2 text-sm font-medium bg-gradient-to-r from-blue-600/15 to-violet-600/15 border border-blue-500/25 text-blue-300 rounded-full"
+                  className="skill-tag px-3.5 py-2 text-sm font-medium bg-blue-600/10 border border-blue-500/25 text-blue-300 rounded-full"
                 >
                   {comp}
                 </motion.span>

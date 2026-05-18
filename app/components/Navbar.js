@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center font-bold text-white font-display text-sm shadow-lg shadow-blue-600/30 group-hover:shadow-blue-600/50 transition-shadow">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center font-bold text-white font-display text-sm shadow-lg shadow-blue-700/30 group-hover:shadow-blue-500/50 transition-shadow">
               AP
             </div>
             <span className="font-display font-semibold text-white hidden sm:block text-sm">
@@ -56,7 +56,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl hover:from-blue-500 hover:to-violet-500 transition-all duration-200 shadow-lg shadow-blue-600/25"
+              className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl hover:from-blue-600 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-blue-700/30"
             >
               Hire Me
             </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="block mt-3 px-4 py-2.5 text-sm font-semibold text-center text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl"
+              className="block mt-3 px-4 py-2.5 text-sm font-semibold text-center text-white bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl"
             >
               Hire Me
             </a>

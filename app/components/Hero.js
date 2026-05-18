@@ -1,12 +1,64 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, ArrowDown, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+
+const designations = [
+  'Enterprise AI Strategist',
+  'Quantum-AI Architect',
+  'Principal Data Scientist',
+  'Full-Stack AI Builder',
+  'AI Engineering Lead',
+  'LLMOps Expert',
+  'Multi-Agent Systems Architect',
+  'AI Governance Leader',
+  'Enterprise AI Consultant',
+  'Data Architect',
+]
 
 const techBadges = [
   'Generative AI', 'Agentic AI', 'Graph-RAG', 'Quantum AI',
   'LLMOps', 'Multi-Cloud', 'A2A Systems', 'Enterprise AI',
 ]
+
+function TypeWriter({ texts, typingSpeed = 75, deletingSpeed = 40, pauseTime = 1800 }) {
+  const [displayText, setDisplayText] = useState('')
+  const [index, setIndex] = useState(0)
+  const [isTyping, setIsTyping] = useState(true)
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    const current = texts[index]
+
+    if (isPaused) {
+      const t = setTimeout(() => { setIsPaused(false); setIsTyping(false) }, pauseTime)
+      return () => clearTimeout(t)
+    }
+
+    if (isTyping) {
+      if (displayText.length < current.length) {
+        const t = setTimeout(() => setDisplayText(current.slice(0, displayText.length + 1)), typingSpeed)
+        return () => clearTimeout(t)
+      }
+      setIsPaused(true)
+    } else {
+      if (displayText.length > 0) {
+        const t = setTimeout(() => setDisplayText(displayText.slice(0, -1)), deletingSpeed)
+        return () => clearTimeout(t)
+      }
+      setIndex((index + 1) % texts.length)
+      setIsTyping(true)
+    }
+  }, [displayText, index, isTyping, isPaused, texts, typingSpeed, deletingSpeed, pauseTime])
+
+  return (
+    <span className="gradient-text">
+      {displayText}
+      <span className="text-blue-400 animate-pulse ml-0.5">|</span>
+    </span>
+  )
+}
 
 export default function Hero() {
   return (
@@ -15,7 +67,7 @@ export default function Hero() {
       <div className="absolute inset-0 grid-pattern" />
 
       <div className="orb w-[500px] h-[500px] bg-blue-700/20 top-1/4 -left-48" />
-      <div className="orb w-[400px] h-[400px] bg-violet-700/20 bottom-1/4 -right-32" />
+      <div className="orb w-[400px] h-[400px] bg-blue-600/12 bottom-1/4 -right-32" />
       <div className="orb w-[300px] h-[300px] bg-cyan-600/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 w-full">
@@ -46,13 +98,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-6"
+              className="mb-6 min-h-[2rem] sm:min-h-[2.5rem]"
             >
-              <p className="font-display text-xl sm:text-2xl font-semibold gradient-text">
-                Enterprise AI Strategist
-              </p>
-              <p className="font-display text-xl sm:text-2xl font-semibold text-slate-300">
-                &amp; Quantum-AI Architect
+              <p className="font-display text-xl sm:text-2xl font-semibold">
+                <TypeWriter texts={designations} />
               </p>
             </motion.div>
 
@@ -91,7 +140,7 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-violet-500 transition-all duration-200 shadow-lg shadow-blue-600/30"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-blue-700/30"
               >
                 Explore My Work <ExternalLink size={15} />
               </a>

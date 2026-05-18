@@ -58,9 +58,9 @@ const stats = [
     decimals: 0,
     label: 'Operational Efficiency Gain',
     sub: 'Via multimodal AI automation',
-    gradient: 'from-violet-500 to-purple-400',
-    border: 'border-violet-500/20',
-    glow: 'shadow-violet-500/10',
+    gradient: 'from-blue-600 to-sky-400',
+    border: 'border-blue-600/20',
+    glow: 'shadow-blue-600/10',
   },
   {
     prefix: '$',

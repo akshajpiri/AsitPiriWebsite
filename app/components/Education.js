@@ -22,10 +22,10 @@ const education = [
     field: 'Business Analytics & Strategy',
     period: '2020 – 2023',
     Icon: GraduationCap,
-    gradient: 'from-violet-500 to-purple-500',
-    border: 'border-violet-500/25',
-    bg: 'bg-violet-500/10',
-    iconColor: 'text-violet-400',
+    gradient: 'from-blue-700 to-sky-400',
+    border: 'border-blue-700/25',
+    bg: 'bg-blue-700/10',
+    iconColor: 'text-sky-400',
     description:
       'Comprehensive executive education with focus on product leadership, data-driven strategy, and organizational transformation at the intersection of technology and business.',
   },
@@ -35,10 +35,10 @@ const education = [
     field: 'User Experience & Product Design',
     period: 'Professional Development',
     Icon: Award,
-    gradient: 'from-pink-500 to-rose-500',
-    border: 'border-pink-500/25',
-    bg: 'bg-pink-500/10',
-    iconColor: 'text-pink-400',
+    gradient: 'from-sky-500 to-blue-400',
+    border: 'border-sky-500/25',
+    bg: 'bg-sky-500/10',
+    iconColor: 'text-sky-400',
     description:
       'Human-centered design principles, usability engineering, and intuitive UX for complex AI-driven enterprise products.',
   },
@@ -58,7 +58,7 @@ const certifications = [
 export default function Education() {
   return (
     <section id="education" className="py-24 bg-slate-900/30 relative overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-purple-700/10 top-0 right-0" />
+      <div className="orb w-[400px] h-[400px] bg-blue-700/10 top-0 right-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

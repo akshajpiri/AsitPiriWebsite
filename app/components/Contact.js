@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="orb w-[400px] h-[400px] bg-blue-700/10 bottom-0 right-0" />
-      <div className="orb w-[300px] h-[300px] bg-violet-700/10 top-0 left-0" />
+      <div className="orb w-[300px] h-[300px] bg-blue-600/10 top-0 left-0" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -191,7 +191,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold rounded-xl hover:from-blue-500 hover:to-violet-500 transition-all duration-200 shadow-lg shadow-blue-600/25 text-sm"
+                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-blue-700/30 text-sm"
               >
                 {sent ? (
                   <>
