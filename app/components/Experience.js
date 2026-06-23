@@ -11,9 +11,11 @@ const experiences = [
     period: 'Jan 2026 – Present',
     location: 'Bengaluru, India (Remote)',
     type: 'Career Transition & Internship',
-    dotColor: 'bg-cyan-400',
-    gradient: 'from-cyan-500 to-blue-500',
-    typeBadge: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
+    dotColor: '#0071e3',
+    roleGradient: 'linear-gradient(90deg, #0071e3, #5ac8fa)',
+    typeBg: '#ebf3ff',
+    typeColor: '#0071e3',
+    typeBorder: '#0071e3',
     achievements: [
       'Architected and launched AutoFounder AI (0→1) — autonomous multi-agent platform automating the full software lifecycle from idea validation to market launch.',
       'Engineered A2A (Agent-to-Agent) system with Validator, Architect, Coder, and Marketer agents sharing contextual memory for end-to-end business automation.',
@@ -30,9 +32,11 @@ const experiences = [
     period: 'Feb 2026 – Mar 2026',
     location: 'Markham, Ontario, Canada',
     type: null,
-    dotColor: 'bg-sky-400',
-    gradient: 'from-sky-500 to-blue-400',
-    typeBadge: null,
+    dotColor: '#5ac8fa',
+    roleGradient: 'linear-gradient(90deg, #5ac8fa, #0071e3)',
+    typeBg: null,
+    typeColor: null,
+    typeBorder: null,
     achievements: [
       'Led end-to-end architecture of an MCP-based enterprise tool orchestration framework enabling modular and scalable AI capability deployment.',
       'Architected A2A multi-agent coordination systems for intelligent reasoning workflows across complex enterprise document ecosystems.',
@@ -48,9 +52,11 @@ const experiences = [
     period: 'Jul 2025 – Jan 2026',
     location: 'Phoenix, Arizona, USA',
     type: null,
-    dotColor: 'bg-blue-400',
-    gradient: 'from-blue-500 to-indigo-500',
-    typeBadge: null,
+    dotColor: '#0071e3',
+    roleGradient: 'linear-gradient(90deg, #0071e3, #7b61ff)',
+    typeBg: null,
+    typeColor: null,
+    typeBorder: null,
     achievements: [
       'Designed Quantum–AI early cancer detection framework identifying pre-mutational molecular signals before traditional diagnostics.',
       'Architected hybrid quantum–classical models using Hamiltonian representations and VQE/HHL-inspired optimisation validated on real 2–4 qubit quantum hardware.',
@@ -66,9 +72,11 @@ const experiences = [
     period: 'Jul 2023 – Dec 2025',
     location: 'Bengaluru, India',
     type: null,
-    dotColor: 'bg-blue-300',
-    gradient: 'from-blue-500 to-cyan-400',
-    typeBadge: null,
+    dotColor: '#0071e3',
+    roleGradient: 'linear-gradient(90deg, #0071e3, #5ac8fa)',
+    typeBg: null,
+    typeColor: null,
+    typeBorder: null,
     achievements: [
       'Built and scaled the enterprise AI function from inception — grew a 10-member global engineering team across Europe and India.',
       'Led benchmarking across AWS Bedrock, Azure ML, GCP Vertex AI, and Hugging Face — achieved 32% latency reduction, 28% cost optimisation, 37% performance gains.',
@@ -85,9 +93,11 @@ const experiences = [
     period: 'Dec 2010 – Sep 2020',
     location: 'Bengaluru, India',
     type: null,
-    dotColor: 'bg-indigo-400',
-    gradient: 'from-indigo-500 to-blue-500',
-    typeBadge: null,
+    dotColor: '#aeaeb2',
+    roleGradient: 'linear-gradient(90deg, #636366, #aeaeb2)',
+    typeBg: null,
+    typeColor: null,
+    typeBorder: null,
     achievements: [
       'Engineering Program Manager – HPE GreenLake (2019–2020): Led hybrid cloud platform across 20+ engineers — delivered 40% CAPEX-to-OPEX shift, 75% faster deployments, 85% downtime reduction, 40% higher IT productivity.',
       'Senior Data Engineer – PADL (2014–2018): Delivered enterprise-scale hybrid cloud and AI analytics platforms; reduced infrastructure over-provisioning by 40%, improved data reliability by 35%.',
@@ -101,9 +111,11 @@ const experiences = [
     period: '2000 – 2010',
     location: 'Bengaluru / Noida / Hyderabad, India',
     type: null,
-    dotColor: 'bg-slate-400',
-    gradient: 'from-slate-400 to-slate-300',
-    typeBadge: null,
+    dotColor: '#d1d1d6',
+    roleGradient: 'linear-gradient(90deg, #aeaeb2, #d1d1d6)',
+    typeBg: null,
+    typeColor: null,
+    typeBorder: null,
     achievements: [
       'Capgemini — Senior Consultant V / Data Architect  ·  Bengaluru  ·  Sep 2008 – Dec 2010',
       'HCL Technologies — Data Analytics Lead  ·  Noida  ·  Jul 2007 – Sep 2008',
@@ -119,37 +131,55 @@ function ExperienceCard({ exp, index }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="relative pl-8"
+      transition={{ duration: 0.5, delay: index * 0.07 }}
+      className="relative pl-9"
     >
       {/* Timeline dot */}
-      <div className={`absolute left-0 top-7 w-3.5 h-3.5 rounded-full ${exp.dotColor} shadow-lg ring-4 ring-slate-950`} />
+      <div
+        className="absolute left-0 top-7 w-3 h-3 rounded-full ring-4 ring-[#f5f5f7]"
+        style={{ background: exp.dotColor }}
+      />
 
-      <div className="glass rounded-2xl p-5 sm:p-6 border border-slate-800/50 hover:border-slate-700/50 transition-colors">
+      <div className="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.06] shadow-apple hover:shadow-apple-md transition-shadow duration-300">
         <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1">
-              <h3 className="font-display font-bold text-white text-base sm:text-lg">{exp.company}</h3>
+              <h3 className="font-bold text-[#1d1d1f] text-[15px] sm:text-[17px] tracking-tight">{exp.company}</h3>
               {exp.type && (
-                <span className={`text-xs px-2.5 py-0.5 rounded-full border font-medium ${exp.typeBadge}`}>
+                <span
+                  className="text-[11px] px-2.5 py-0.5 rounded-full border font-medium"
+                  style={{
+                    background: exp.typeBg,
+                    color: exp.typeColor,
+                    borderColor: `${exp.typeBorder}30`,
+                  }}
+                >
                   {exp.type}
                 </span>
               )}
             </div>
-            <p className={`text-sm font-semibold bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent`}>
+            <p
+              className="text-[13px] font-semibold"
+              style={{
+                background: exp.roleGradient,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               {exp.role}
             </p>
           </div>
           <div className="flex flex-col items-end gap-1 flex-shrink-0">
-            <div className="flex items-center gap-1.5 text-slate-400 text-xs">
-              <Calendar size={11} />
+            <div className="flex items-center gap-1.5 text-[#86868b] text-[11px]">
+              <Calendar size={10} />
               <span>{exp.period}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-slate-500 text-xs">
-              <MapPin size={11} />
+            <div className="flex items-center gap-1.5 text-[#aeaeb2] text-[11px]">
+              <MapPin size={10} />
               <span>{exp.location}</span>
             </div>
           </div>
@@ -158,8 +188,11 @@ function ExperienceCard({ exp, index }) {
         <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-[800px]' : 'max-h-[72px]'}`}>
           <ul className="space-y-2.5">
             {exp.achievements.map((ach, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-slate-400 text-sm">
-                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${exp.dotColor} flex-shrink-0 opacity-80`} />
+              <li key={i} className="flex items-start gap-2.5 text-[#6e6e73] text-[13px]">
+                <span
+                  className="mt-[5px] w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style={{ background: exp.dotColor, opacity: 0.7 }}
+                />
                 <span className="leading-relaxed">{ach}</span>
               </li>
             ))}
@@ -168,10 +201,10 @@ function ExperienceCard({ exp, index }) {
 
         <button
           onClick={() => setExpanded(!expanded)}
-          className="mt-4 flex items-center gap-1.5 text-slate-500 hover:text-slate-300 text-xs transition-colors"
+          className="mt-4 flex items-center gap-1.5 text-[#aeaeb2] hover:text-[#6e6e73] text-[12px] transition-colors"
         >
           <ChevronDown
-            size={13}
+            size={12}
             className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
           />
           {expanded ? 'Show less' : 'Show all achievements'}
@@ -183,24 +216,25 @@ function ExperienceCard({ exp, index }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-blue-700/10 bottom-0 left-0" />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="experience" className="py-28 bg-[#f5f5f7] relative overflow-hidden">
+      <div className="orb w-[400px] h-[400px] bg-[#0071e3]/[0.04] bottom-0 left-0" />
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 relative z-10">
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-blue-400 font-medium text-xs uppercase tracking-widest mb-3">Career Journey</p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white section-title">
+          <p className="text-[#0071e3] font-semibold text-[12px] uppercase tracking-widest mb-3">Career Journey</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#1d1d1f] tracking-tight section-title">
             Work Experience
           </h2>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-1.5 top-0 bottom-0 w-0.5 timeline-line rounded-full" />
-          <div className="space-y-7">
+          <div className="absolute left-[5px] top-0 bottom-0 w-px timeline-line" />
+          <div className="space-y-6">
             {experiences.map((exp, i) => (
               <ExperienceCard key={exp.id} exp={exp} index={i} />
             ))}

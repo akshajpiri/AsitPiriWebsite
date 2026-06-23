@@ -47,9 +47,8 @@ const stats = [
     decimals: 0,
     label: 'Years of Experience',
     sub: 'Cross-industry AI leadership',
-    gradient: 'from-blue-500 to-cyan-400',
-    border: 'border-blue-500/20',
-    glow: 'shadow-blue-500/10',
+    accent: '#0071e3',
+    bg: '#ebf3ff',
   },
   {
     prefix: '',
@@ -58,9 +57,8 @@ const stats = [
     decimals: 0,
     label: 'Operational Efficiency Gain',
     sub: 'Via multimodal AI automation',
-    gradient: 'from-blue-600 to-sky-400',
-    border: 'border-blue-600/20',
-    glow: 'shadow-blue-600/10',
+    accent: '#0071e3',
+    bg: '#ebf3ff',
   },
   {
     prefix: '$',
@@ -69,9 +67,8 @@ const stats = [
     decimals: 1,
     label: 'AI Program Approvals',
     sub: 'In strategic enterprise AI',
-    gradient: 'from-emerald-500 to-teal-400',
-    border: 'border-emerald-500/20',
-    glow: 'shadow-emerald-500/10',
+    accent: '#34c759',
+    bg: '#f0faf4',
   },
   {
     prefix: '',
@@ -80,29 +77,34 @@ const stats = [
     decimals: 0,
     label: 'LLM Q&A Accuracy',
     sub: 'On 1M+ document corpus',
-    gradient: 'from-orange-500 to-amber-400',
-    border: 'border-orange-500/20',
-    glow: 'shadow-orange-500/10',
+    accent: '#ff9f0a',
+    bg: '#fff8eb',
   },
 ]
 
 export default function Stats() {
   return (
-    <section className="py-14 bg-slate-900/40 border-y border-slate-800/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <section className="py-16 bg-[#f5f5f7] border-y border-black/[0.06]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`glass rounded-2xl p-5 sm:p-6 border ${stat.border} shadow-xl ${stat.glow} hover:scale-[1.02] transition-transform duration-300`}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-white rounded-2xl p-5 sm:p-6 border border-black/[0.06] shadow-apple hover:shadow-apple-md transition-shadow duration-300"
             >
-              <p
-                className={`font-display text-3xl sm:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}
+              <div
+                className="inline-flex items-center justify-center w-10 h-10 rounded-xl mb-4"
+                style={{ background: stat.bg }}
               >
+                <span className="text-xl font-bold" style={{ color: stat.accent }}>
+                  {stat.prefix || stat.suffix.charAt(0)}
+                </span>
+              </div>
+              <p className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ color: stat.accent }}>
                 <AnimatedCounter
                   prefix={stat.prefix}
                   target={stat.value}
@@ -110,8 +112,8 @@ export default function Stats() {
                   decimals={stat.decimals}
                 />
               </p>
-              <p className="text-white font-semibold text-sm mt-1.5">{stat.label}</p>
-              <p className="text-slate-500 text-xs mt-0.5 leading-relaxed">{stat.sub}</p>
+              <p className="text-[#1d1d1f] font-semibold text-[13px] mt-1.5 leading-snug">{stat.label}</p>
+              <p className="text-[#86868b] text-[12px] mt-0.5 leading-relaxed">{stat.sub}</p>
             </motion.div>
           ))}
         </div>

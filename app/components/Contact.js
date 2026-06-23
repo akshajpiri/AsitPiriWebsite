@@ -9,29 +9,29 @@ const contactLinks = [
     label: 'Email',
     value: 'asit.piri@gmail.com',
     href: 'mailto:asit.piri@gmail.com',
-    gradient: 'from-blue-500 to-cyan-500',
-    border: 'border-blue-500/25',
-    bg: 'bg-blue-500/10',
+    accent: '#0071e3',
+    bg: '#ebf3ff',
   },
   {
     Icon: Linkedin,
     label: 'LinkedIn',
     value: 'linkedin.com/in/asit-piri',
     href: 'https://www.linkedin.com/in/asit-piri/',
-    gradient: 'from-blue-600 to-blue-400',
-    border: 'border-blue-600/25',
-    bg: 'bg-blue-600/10',
+    accent: '#0071e3',
+    bg: '#ebf3ff',
   },
   {
     Icon: Github,
     label: 'GitHub',
     value: 'github.com/asit-piri',
     href: 'https://github.com/asit-piri',
-    gradient: 'from-slate-300 to-slate-100',
-    border: 'border-slate-500/25',
-    bg: 'bg-slate-500/10',
+    accent: '#1d1d1f',
+    bg: '#f5f5f7',
   },
 ]
+
+const inputClass =
+  'w-full bg-[#f5f5f7] border border-black/[0.08] rounded-xl px-4 py-3 text-[#1d1d1f] text-[14px] placeholder-[#aeaeb2] input-focus transition-all duration-200'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -46,77 +46,79 @@ export default function Contact() {
     setTimeout(() => setSent(false), 4000)
   }
 
-  const field = 'w-full bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-blue-500/60 transition-colors'
-
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="orb w-[400px] h-[400px] bg-blue-700/10 bottom-0 right-0" />
-      <div className="orb w-[300px] h-[300px] bg-blue-600/10 top-0 left-0" />
+    <section id="contact" className="py-28 bg-[#f5f5f7] relative overflow-hidden">
+      <div className="orb w-[400px] h-[400px] bg-[#0071e3]/[0.04] bottom-0 right-0" />
+      <div className="orb w-[300px] h-[300px] bg-[#5ac8fa]/[0.04] top-0 left-0" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-5 sm:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-blue-400 font-medium text-xs uppercase tracking-widest mb-3">Let's Connect</p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white section-title">
+          <p className="text-[#0071e3] font-semibold text-[12px] uppercase tracking-widest mb-3">Let's Connect</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#1d1d1f] tracking-tight section-title">
             Get In Touch
           </h2>
-          <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-[#6e6e73] mt-6 max-w-xl mx-auto text-[15px]">
             Looking for an Enterprise AI Strategist, a technical consulting partner, or a senior AI
             leader? I'm open to freelance projects, permanent roles, and any exciting opportunity.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
           {/* Left: Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             {/* Availability card */}
-            <div className="glass rounded-2xl p-6 border border-emerald-500/20 mb-5">
+            <div className="bg-white rounded-2xl p-6 border border-[#34c759]/20 shadow-apple mb-4">
               <div className="flex items-center gap-2.5 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-emerald-400 font-semibold text-sm">Available for Opportunities</span>
+                <span className="w-2 h-2 rounded-full bg-[#34c759] animate-pulse" />
+                <span className="text-[#1d7a38] font-semibold text-[13px]">Available for Opportunities</span>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed mb-3">
+              <p className="text-[#6e6e73] text-[14px] leading-relaxed mb-3">
                 Open to{' '}
-                <strong className="text-white">freelance AI consulting</strong>,{' '}
-                <strong className="text-white">enterprise AI architecture projects</strong>,{' '}
-                <strong className="text-white">permanent leadership roles</strong>, and any
+                <strong className="text-[#1d1d1f] font-semibold">freelance AI consulting</strong>,{' '}
+                <strong className="text-[#1d1d1f] font-semibold">enterprise AI architecture projects</strong>,{' '}
+                <strong className="text-[#1d1d1f] font-semibold">permanent leadership roles</strong>, and any
                 exciting AI opportunity that aligns with my expertise.
               </p>
-              <div className="flex items-center gap-2 text-slate-500 text-xs">
-                <MapPin size={12} />
+              <div className="flex items-center gap-2 text-[#aeaeb2] text-[12px]">
+                <MapPin size={11} />
                 <span>Bengaluru, India · Available remotely worldwide</span>
               </div>
             </div>
 
             {/* Contact links */}
             <div className="space-y-3">
-              {contactLinks.map(({ Icon, label, value, href, gradient, border, bg }, i) => (
+              {contactLinks.map(({ Icon, label, value, href, accent, bg }, i) => (
                 <motion.a
                   key={label}
                   href={href}
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 glass rounded-xl p-4 border border-slate-800/50 hover:border-slate-700/50 transition-all group"
+                  className="flex items-center gap-4 bg-white rounded-2xl p-4 border border-black/[0.06] shadow-apple hover:shadow-apple-md transition-all duration-300 group"
                 >
-                  <div className={`w-10 h-10 rounded-xl ${bg} border ${border} flex items-center justify-center flex-shrink-0`}>
-                    <Icon size={17} className="text-slate-300" />
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: bg }}
+                  >
+                    <Icon size={15} style={{ color: accent }} />
                   </div>
                   <div>
-                    <p className="text-slate-500 text-xs">{label}</p>
-                    <p className={`font-semibold text-sm bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
+                    <p className="text-[#aeaeb2] text-[11px] font-medium">{label}</p>
+                    <p className="font-semibold text-[13px] text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors">
                       {value}
                     </p>
                   </div>
@@ -127,83 +129,85 @@ export default function Contact() {
 
           {/* Right: Contact form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <form
               onSubmit={handleSubmit}
-              className="glass rounded-2xl p-6 border border-slate-800/50"
+              className="bg-white rounded-2xl p-6 border border-black/[0.06] shadow-apple"
             >
               <div className="flex items-center gap-2.5 mb-6">
-                <MessageSquare size={17} className="text-blue-400" />
-                <h3 className="font-display font-bold text-white">Send a Message</h3>
+                <div className="w-8 h-8 rounded-xl bg-[#ebf3ff] flex items-center justify-center">
+                  <MessageSquare size={14} className="text-[#0071e3]" />
+                </div>
+                <h3 className="font-bold text-[#1d1d1f] text-[15px] tracking-tight">Send a Message</h3>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label className="text-slate-400 text-xs mb-1.5 block">Your Name *</label>
+                  <label className="text-[#6e6e73] text-[12px] font-medium mb-1.5 block">Your Name *</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
                     placeholder="Jane Smith"
-                    className={field}
+                    className={inputClass}
                   />
                 </div>
                 <div>
-                  <label className="text-slate-400 text-xs mb-1.5 block">Your Email *</label>
+                  <label className="text-[#6e6e73] text-[12px] font-medium mb-1.5 block">Your Email *</label>
                   <input
                     type="email"
                     required
                     value={form.email}
                     onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
                     placeholder="jane@company.com"
-                    className={field}
+                    className={inputClass}
                   />
                 </div>
               </div>
 
               <div className="mb-4">
-                <label className="text-slate-400 text-xs mb-1.5 block">Subject</label>
+                <label className="text-[#6e6e73] text-[12px] font-medium mb-1.5 block">Subject</label>
                 <input
                   type="text"
                   value={form.subject}
                   onChange={(e) => setForm((p) => ({ ...p, subject: e.target.value }))}
                   placeholder="Freelance Project / Job Opportunity / Collaboration"
-                  className={field}
+                  className={inputClass}
                 />
               </div>
 
               <div className="mb-6">
-                <label className="text-slate-400 text-xs mb-1.5 block">Message *</label>
+                <label className="text-[#6e6e73] text-[12px] font-medium mb-1.5 block">Message *</label>
                 <textarea
                   required
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
                   placeholder="Tell me about your project, role, or collaboration idea..."
-                  className={`${field} resize-none`}
+                  className={`${inputClass} resize-none`}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-blue-700/30 text-sm"
+                className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#0071e3] text-white font-semibold rounded-full hover:bg-[#0077ed] transition-colors duration-200 shadow-apple-blue text-[14px]"
               >
                 {sent ? (
                   <>
-                    <CheckCircle size={16} /> Email client opened!
+                    <CheckCircle size={15} /> Email client opened!
                   </>
                 ) : (
                   <>
-                    <Send size={16} /> Send Message
+                    <Send size={14} /> Send Message
                   </>
                 )}
               </button>
-              <p className="text-slate-600 text-xs mt-3 text-center">
+              <p className="text-[#aeaeb2] text-[11px] mt-3 text-center">
                 Opens your email client with the message pre-filled
               </p>
             </form>
@@ -215,16 +219,16 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16 pt-8 border-t border-slate-800/60"
+          className="text-center mt-20 pt-8 border-t border-black/[0.08]"
         >
-          <p className="text-slate-600 text-sm">
+          <p className="text-[#aeaeb2] text-[13px]">
             © 2026 Asit Piri · Enterprise AI Strategist &amp; Quantum-AI Architect
             <span className="mx-2">·</span>
             <a
               href="https://www.linkedin.com/in/asit-piri/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-slate-400 transition-colors"
+              className="hover:text-[#0071e3] transition-colors"
             >
               LinkedIn
             </a>
@@ -233,7 +237,7 @@ export default function Contact() {
               href="https://github.com/asit-piri"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-slate-400 transition-colors"
+              className="hover:text-[#1d1d1f] transition-colors"
             >
               GitHub
             </a>

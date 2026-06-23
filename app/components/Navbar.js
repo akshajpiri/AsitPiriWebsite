@@ -17,36 +17,38 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/50 shadow-lg shadow-black/20'
+          ? 'bg-white/80 backdrop-blur-[20px] border-b border-black/[0.08]'
           : 'bg-transparent'
       }`}
+      style={{ WebkitBackdropFilter: scrolled ? 'blur(20px) saturate(180%)' : 'none' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="flex items-center justify-between h-[52px]">
+
           <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center font-bold text-white font-display text-sm shadow-lg shadow-blue-700/30 group-hover:shadow-blue-500/50 transition-shadow">
+            <div className="w-8 h-8 rounded-[10px] bg-[#0071e3] flex items-center justify-center text-white font-semibold text-xs tracking-tight shadow-apple-sm group-hover:bg-[#0077ed] transition-colors">
               AP
             </div>
-            <span className="font-display font-semibold text-white hidden sm:block text-sm">
+            <span className="font-semibold text-[#1d1d1f] text-[14px] hidden sm:block tracking-tight">
               Asit Piri
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="px-3 py-1.5 text-[13px] text-[#6e6e73] hover:text-[#1d1d1f] transition-colors duration-200 rounded-lg hover:bg-black/[0.04]"
               >
                 {link.label}
               </a>
@@ -56,7 +58,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl hover:from-blue-600 hover:to-blue-400 transition-all duration-200 shadow-lg shadow-blue-700/30"
+              className="px-4 py-1.5 text-[13px] font-medium text-white bg-[#0071e3] rounded-full hover:bg-[#0077ed] transition-colors duration-200 shadow-apple-sm"
             >
               Hire Me
             </a>
@@ -64,33 +66,36 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            className="md:hidden p-1.5 text-[#6e6e73] hover:text-[#1d1d1f] transition-colors rounded-lg hover:bg-black/[0.04]"
+            aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
-          <div className="px-4 py-4 space-y-1">
+        <div className="md:hidden bg-white/95 backdrop-blur-[20px] border-b border-black/[0.06]">
+          <div className="px-5 py-4 space-y-0.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-3 py-2.5 text-sm text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                className="block px-3 py-2 text-[14px] text-[#6e6e73] hover:text-[#1d1d1f] hover:bg-black/[0.04] rounded-lg transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="block mt-3 px-4 py-2.5 text-sm font-semibold text-center text-white bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl"
-            >
-              Hire Me
-            </a>
+            <div className="pt-2">
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="block px-4 py-2 text-[14px] font-medium text-center text-white bg-[#0071e3] rounded-full hover:bg-[#0077ed] transition-colors"
+              >
+                Hire Me
+              </a>
+            </div>
           </div>
         </div>
       )}
