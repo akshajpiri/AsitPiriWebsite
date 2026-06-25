@@ -55,15 +55,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
-            <a
-              href="#contact"
-              className="px-4 py-1.5 text-[13px] font-medium text-white bg-[#0071e3] rounded-full hover:bg-[#0077ed] transition-colors duration-200 shadow-apple-sm"
-            >
-              Hire Me
-            </a>
-          </div>
-
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-1.5 text-[#6e6e73] hover:text-[#1d1d1f] transition-colors rounded-lg hover:bg-black/[0.04]"
@@ -87,15 +78,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <div className="pt-2">
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="block px-4 py-2 text-[14px] font-medium text-center text-white bg-[#0071e3] rounded-full hover:bg-[#0077ed] transition-colors"
-              >
-                Hire Me
-              </a>
-            </div>
+
           </div>
         </div>
       )}

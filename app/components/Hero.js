@@ -221,7 +221,7 @@ export default function Hero() {
                 className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-apple-lg border border-black/[0.06]"
               >
                 <p className="text-[#86868b] text-[11px] font-medium">AI Projects</p>
-                <p className="text-2xl font-bold gradient-text">68+</p>
+                <p className="text-2xl font-bold gradient-text">100+</p>
               </motion.div>
 
               {/* Dashed rotating ring */}

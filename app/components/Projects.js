@@ -95,7 +95,7 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="text-[#0071e3] hover:underline inline-flex items-center gap-1 font-medium"
             >
-              68+ GitHub repositories <ExternalLink size={12} />
+              100+ GitHub repositories <ExternalLink size={12} />
             </a>
           </p>
         </motion.div>
@@ -183,7 +183,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#f5f5f7] text-[#1d1d1f] font-semibold rounded-full hover:bg-[#e8e8ed] transition-colors border border-black/[0.06] text-[14px]"
           >
             <Github size={15} />
-            View All 68+ Projects on GitHub
+            View All 100+ Projects on GitHub
           </a>
         </motion.div>
       </div>
