@@ -4,6 +4,36 @@ import { Github, ExternalLink, Code2 } from 'lucide-react'
 
 const projects = [
   {
+    name: 'AutoFounder-AI',
+    description:
+      'Autonomous multi-agent platform automating the full software lifecycle from idea validation to market launch. Features A2A agent system (Validator, Architect, Coder, Marketer) with a self-healing MVP engine generating production-grade Next.js/FastAPI stacks on AWS.',
+    language: 'Python',
+    tags: ['Multi-Agent', 'A2A', 'LLMOps', 'SaaS', 'AWS'],
+    accent: '#0071e3',
+    iconBg: '#ebf3ff',
+    github: 'https://github.com/asit-piri/AutoFounder-AI',
+  },
+  {
+    name: 'Knovera',
+    description:
+      'Enterprise-grade RAG platform powered by Gemini and Pinecone with policy-driven API governance and automated PII redaction. Built for scalable, compliant enterprise knowledge management.',
+    language: 'Python',
+    tags: ['RAG', 'Gemini', 'Pinecone', 'Enterprise AI', 'PII'],
+    accent: '#7b61ff',
+    iconBg: '#f0eeff',
+    github: 'https://github.com/asit-piri/Knovera',
+  },
+  {
+    name: 'ResolveAI',
+    description:
+      'AI-powered resolution platform leveraging large language models for intelligent conflict detection, analysis, and automated resolution workflows across enterprise use cases.',
+    language: 'Python',
+    tags: ['GenAI', 'NLP', 'LLM', 'Resolution AI'],
+    accent: '#34c759',
+    iconBg: '#f0faf4',
+    github: 'https://github.com/asit-piri/ResolveAI',
+  },
+  {
     name: 'Agentic-Knowledge-To-Action',
     description:
       'AI Gateway and registry layer that unifies MCP, A2A, REST, and gRPC services into a single orchestration platform. Enables modular, scalable AI capability deployment across enterprise systems.',
@@ -24,26 +54,6 @@ const projects = [
     github: 'https://github.com/asit-piri/Sales-Marketing-A2A-Orchestrator',
   },
   {
-    name: 'Guardrail-AI-Template',
-    description:
-      'Enterprise guardrail framework for LLMs using a 6-layer defense architecture. Features PII redaction, prompt injection defense, YAML hot-reloading, and automated policy governance.',
-    language: 'Python',
-    tags: ['LLM Safety', 'Guardrails', 'Governance', 'Enterprise AI'],
-    accent: '#ff3b30',
-    iconBg: '#fff0ee',
-    github: 'https://github.com/asit-piri/Guradrail-AI-Template',
-  },
-  {
-    name: 'ResolveAI',
-    description:
-      'AI-powered resolution platform leveraging large language models for intelligent conflict detection, analysis, and automated resolution workflows across enterprise use cases.',
-    language: 'Python',
-    tags: ['GenAI', 'NLP', 'LLM', 'Resolution AI'],
-    accent: '#34c759',
-    iconBg: '#f0faf4',
-    github: 'https://github.com/asit-piri/ResolveAI',
-  },
-  {
     name: 'AWS-Deployment-Automation-V2',
     description:
       'End-to-end deployment automation using AWS services with Terraform and GitHub Actions. Zero-downtime delivery with integrated security scanning and fail-safe rollback mechanisms.',
@@ -52,16 +62,6 @@ const projects = [
     accent: '#ff9f0a',
     iconBg: '#fff8eb',
     github: 'https://github.com/asit-piri/Asit-AWS-Deployment-Automation-EndToEnd-V2.0',
-  },
-  {
-    name: 'Cursor-Rule-Template',
-    description:
-      'Comprehensive rule templates for the Cursor IDE enabling consistent AI-assisted development with enforced best practices, project-specific conventions, and coding standards.',
-    language: 'Markdown',
-    tags: ['Cursor IDE', 'Dev Tools', 'AI Coding', 'Templates'],
-    accent: '#5ac8fa',
-    iconBg: '#eaf8ff',
-    github: 'https://github.com/asit-piri/Cursor-Rule-Template',
   },
 ]
 
