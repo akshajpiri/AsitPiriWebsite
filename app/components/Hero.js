@@ -73,16 +73,6 @@ export default function Hero() {
 
           {/* Left: Content */}
           <div className="order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f0faf4] border border-[#34c759]/25 text-[#1d7a38] text-[13px] font-medium mb-7"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#34c759] animate-pulse" />
-              Open to Opportunities — Freelance &amp; Full-time
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
