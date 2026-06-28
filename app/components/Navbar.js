@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -34,13 +35,15 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-[52px]">
 
-          <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-[10px] bg-[#0071e3] flex items-center justify-center text-white font-semibold text-xs tracking-tight shadow-apple-sm group-hover:bg-[#0077ed] transition-colors">
-              AP
-            </div>
-            <span className="font-semibold text-[#1d1d1f] text-[14px] hidden sm:block tracking-tight">
-              Asit Piri
-            </span>
+          <a href="#home" className="flex items-center group">
+            <Image
+              src="/ASITPIRI-LOGO.png"
+              alt="Asit Piri"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-0.5">

@@ -73,6 +73,18 @@ export default function Hero() {
 
           {/* Left: Content */}
           <div className="order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="mb-4"
+            >
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#34c759]/10 text-[#1a7a35] text-[13px] font-medium rounded-full border border-[#34c759]/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#34c759] animate-pulse" />
+                Bangalore, India
+              </span>
+            </motion.div>
+
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
